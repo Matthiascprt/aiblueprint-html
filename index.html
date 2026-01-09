@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="/src/style.css" />
+    <title>html</title>
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="header-logo">
+        <i class="fab fa-apple"></i>
+        <span class="header-name">Matthias Colpaert</span>
+      </div>
+      <div class="header-time" id="current-time">12:12:12</div>
+    </header>
+    <h1>Matthias Colpaert</h1>
+    <h2>cool milliardaire</h2>
+    <div class="social-links">
+      <a href="https://x.com" title="X (Twitter)" class="social-link">
+        <img src="/public/x-logo.png" alt="X" class="social-logo" />
+        <span>X</span>
+      </a>
+      <a href="https://youtube.com" title="YouTube" class="social-link">
+        <img src="/public/youtube-logo.png" alt="YouTube" class="social-logo" />
+        <span>YouTube</span>
+      </a>
+      <a href="https://instagram.com" title="Instagram" class="social-link">
+        <img src="/public/logo-instagram_976174-11.avif" alt="Instagram" class="social-logo" />
+        <span>Instagram</span>
+      </a>
+    </div>
+
+    <script>
+      function updateTime() {
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+        const timeString = `${hours}:${minutes}:${seconds}`;
+        document.getElementById('current-time').textContent = timeString;
+      }
+      
+      updateTime();
+      setInterval(updateTime, 1000);
+    </script>
+  </body>
+</html>
